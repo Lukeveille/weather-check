@@ -1,17 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { getTemp } from '../actions'
-
-let styles = {
-  backgroundColor: 'HotPink ',
-  width: '250px',
-  height: '100px',
-  borderRadius: '100px',
-  display: 'block',
-  margin: '50px auto',
-  fontSize: '25px',
-  border: '3px solid '
-}
+import { getTemp } from '../actions';
+import '../styles/Button.css';
 
 class Button extends React.Component {
   constructor(props) {
@@ -20,7 +10,7 @@ class Button extends React.Component {
   }
   render() {
     return (
-      <button style={!this.state.hover ? styles : { ...styles, backgroundColor: 'DarkTurquoise ' }}
+      <button className="Button"
         onMouseOut={() => { this.setState({ hover: false }) }}
         onMouseOver={() => { this.setState({ hover: true }) }}
         onClick={() => this.props.getTemp(this.props.name)}
@@ -29,11 +19,7 @@ class Button extends React.Component {
   }
 
 };
-/*
-let Button=({getTemp,name})=>(
-  <button onClick={()=>getTemp(name)}>Get temperature</button>
-)
-*/
+
 const mapStateToProps = (state) => (
   { name: state.reducer.cityName }
 )

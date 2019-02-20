@@ -6,22 +6,22 @@ import Button from '../containers/Button';
 import { connect } from 'react-redux';
 import '../styles/App.css';
 
-let App = ({ callDone, cityName, getByUrl }) => {
-  if (cityName && !callDone) {
-    getByUrl(cityName);
+let App = ({ callDone, id, getByUrl }) => {
+  if (id && !callDone) {
+    getByUrl(id);
   }
   return (
-    <div>
+    <div className="App-header">
       <InputCity />
       <Button />
       <Loading />
-      <Temperature name={cityName} />
+      <Temperature name={id} />
     </div>
   )
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  cityName: ownProps.match.params[0],
+  id: ownProps.match.params[0],
   callDone: state.reducer.callDone
 });
 

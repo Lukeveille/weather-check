@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { logger } from 'redux-logger';
 import reducer from './reducers';
 import rootSaga from './sagas';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import './styles/index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
@@ -27,13 +27,13 @@ const store = createStore(
 
 sagaMiddleware.run(rootSaga);
 
-ReactDOM.render(
+render(
   <Provider store={store}>
     <Router history={history}>
       <Switch>
         <Route exact path="/" component={App}/>
         <Route path="/city:*" component={App}/>
-        <Route path="/*" component={App}/>
+        <Route path="/*" component={() => <h1 style={{color:'red'}}>NOT FOUND!!!</h1>} />
       </Switch>
     </Router>
   </Provider>,

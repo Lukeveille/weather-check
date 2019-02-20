@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import logo from '../logo.svg';
 import '../styles/Loading.css';
 
-let Loading = (loading) => (
+let Loading = ({loading}) => (
   loading? <img src={logo} className="Loading-icon" alt="logo" /> : null
 )
 

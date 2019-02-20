@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 let Temperature = ({ temp, city, name = null }) => (
   <div>
     <h1>
-      {temp? 'In ' + name? name : city : temp + ' degrees Celsius'}
+      {temp? 'In ' + name? name : city + ':' + temp + ' degrees Celsius' : null}
     </h1>
   </div>
 )

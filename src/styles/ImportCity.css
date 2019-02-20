@@ -1,0 +1,9 @@
+.ImportCity {
+  display: block;
+  width: 80%;
+  margin: 10%;
+  font-size: 30px;
+  border-radius: 4em;
+  padding-left: 20px;
+  color: orange;
+}
