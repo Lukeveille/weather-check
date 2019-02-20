@@ -3,15 +3,11 @@ import { connect } from 'react-redux';
 import { getTemp } from '../actions';
 import '../styles/Button.css';
 
-class Button extends React.Component {
-  render() {
-    return (
-      <button className="Button"
-        onClick={() => this.props.getTemp(this.props.name)}
-      >Get temperature</button>
-    );
-  };
-};
+let Button = ({ name, getTemp }) => (
+  <button className="Button"
+    onClick={() => getTemp(name)}
+  >Get temperature</button>
+);
 
 const mapStateToProps = (state) => (
   { name: state.reducer.cityName }

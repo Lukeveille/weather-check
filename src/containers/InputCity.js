@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setCityName } from '../actions';
-import '../styles/ImportCity.css';
+import '../styles/InputCity.css';
 
-const SearchField = ({ setCityName }) => (
+let InputCity = ({ setCityName }) => (
   <div>
-    <input className="ImportCity"
+    <input className="InputCity"
       onChange={(evt) => {
         setCityName(evt.target.value);
       }}
@@ -16,6 +16,7 @@ const SearchField = ({ setCityName }) => (
 );
 
 const mapDispatchToProps = { setCityName };
-const Search = connect(null, mapDispatchToProps)(SearchField);
 
-export default Search;
+InputCity = connect(null, mapDispatchToProps)(InputCity);
+
+export default InputCity;
