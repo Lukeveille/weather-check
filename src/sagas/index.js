@@ -17,4 +17,8 @@ function* actionWatcher() {
   yield takeLatest('GET_TEMP', fetchTemp)
 }
 
-export default function* rootSaga() {yield all([actionWatcher(),]);};
+export default function* rootSaga() {
+  yield all([
+    actionWatcher(),
+  ]);
+};

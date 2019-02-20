@@ -4,20 +4,13 @@ import { getTemp } from '../actions';
 import '../styles/Button.css';
 
 class Button extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { hover: false };
-  }
   render() {
     return (
       <button className="Button"
-        onMouseOut={() => { this.setState({ hover: false }) }}
-        onMouseOver={() => { this.setState({ hover: true }) }}
         onClick={() => this.props.getTemp(this.props.name)}
       >Get temperature</button>
     );
-  }
-
+  };
 };
 
 const mapStateToProps = (state) => (
@@ -26,7 +19,6 @@ const mapStateToProps = (state) => (
 const mapDispatchToProps = {
   getTemp,
 };
-
 
 Button = connect(
   mapStateToProps,

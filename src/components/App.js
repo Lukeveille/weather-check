@@ -26,7 +26,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getByUrl: name => { dispatch({type: 'GET_TEMP', name})}
+  getByUrl: (name) => { dispatch({type: 'GET_TEMP', name})}
 })
 
 App = connect(mapStateToProps, mapDispatchToProps)(App);
