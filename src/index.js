@@ -16,6 +16,7 @@ import { routerReducer, routerMiddleware } from 'react-router-redux';
 
 const history = createHistory();
 const sagaMiddleware = createSagaMiddleware();
+
 const store = createStore(
   combineReducers({
     reducer,
@@ -31,6 +32,8 @@ ReactDOM.render(
     <Router history={history}>
       <Switch>
         <Route exact path="/" component={App}/>
+        <Route path="/city:*" component={App}/>
+        <Route path="/*" component={App}/>
       </Switch>
     </Router>
   </Provider>,
